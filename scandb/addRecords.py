@@ -4,10 +4,10 @@ import sqlite3
 conn = None
 
 conn = sqlite3.connect('scan.db')
-print "Opened database successfully";
+print "Opened database successfully"
 
 conn.execute("INSERT INTO STUDENTS (ID,NAME,NETID) \
-      VALUES (5, 'Angie', 'tribeca21' )");
+      VALUES (6, 'Lesley', 'nope4' )")
 
 cursor = conn.execute("SELECT id, name, NETID from STUDENTS")
 for row in cursor:
@@ -15,7 +15,7 @@ for row in cursor:
    print "NAME = ", row[1]
    print "NetID = ", row[2], "\n"
 
-print "Operation done successfully";
+print "Operation done successfully"
 
 conn.close()
 

@@ -6,7 +6,7 @@ conn = None
 
 #connect to or create db
 conn = sqlite3.connect('scan.db')
-print "Opened database successfully";
+print "Opened database successfully"
 
 #create table and columns
 conn.execute('''CREATE TABLE ATTENDANCE
@@ -14,7 +14,7 @@ conn.execute('''CREATE TABLE ATTENDANCE
     CLASSNO INT     NOT NULL,
     DATE    DATE    NOT NULL,
     SECTION   TEXT);''')
-print "Table created successfully";
+print "Table created successfully"
 
 conn.close()
 
