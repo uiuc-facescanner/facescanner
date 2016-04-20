@@ -19,21 +19,23 @@ among other things.
 def home():
 	return render_template('home.html')
 	
-@app.route('/program', methods=['POST'])
-def program():
-	req=request.form['info']
-	if req == 'manip data':
-		# Some function to manipulate or view certain data from database
-		return render_template('do_something.html')
-	elif req == 'original pictures':
-		return render_template('view_pictures_original.html')
-	elif req == 'detected pictures':
-		return render_template('view_pictures_detected.html')
-	elif req == 'start camera':
-		# Some function here to start the camera
-		return render_template('camera_start.html')
-	else:
-		return render_template('do_something.html')
+@app.route('/camera-start')
+def camera_start():
+	# function to start camera
+	return render_template('camera-start.html')
+
+@app.route('/manip-data')
+def manip_data():
+	# various functions to manipulate data
+	return render_template('do-something.html')
+	
+@app.route('/view-detected')
+def view_detected():
+	return render_template('view-pictures-detected.html')
+	
+@app.route('/view-original')
+def view_original():
+	return render_template('view-pictures-original.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)
