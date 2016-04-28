@@ -29,9 +29,9 @@ def manip_data():
 	# various functions to manipulate data
 	return render_template('do-something.html')
 	
-@app.route('/view-detected')
+@app.route('/view-faces')
 def view_detected():
-	return render_template('view-pictures-detected.html')
+	return render_template('view-faces.html')
 	
 @app.route('/view-original')
 def view_original():
