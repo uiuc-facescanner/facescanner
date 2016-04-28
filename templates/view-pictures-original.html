@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	<p>This file will show the viewer the original pictures that haven't been run through facial recognition software.</p>
+<img src="{{ url_for('static', filename='images/face1.jpg') }}" style="width:128px;height:128px;">
+<img src="{{ url_for('static', filename='images/face2.jpg') }}" style="width:128px;height:128px;">
+<img src="{{ url_for('static', filename='images/face3.jpg') }}" style="width:128px;height:128px;">
 	
-	<form><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
+
+<form><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
 	
 {% endblock %}
