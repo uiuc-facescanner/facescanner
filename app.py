@@ -24,13 +24,13 @@ def camera_start():
 	# function to start camera
 	return render_template('camera-start.html')
 
-@app.route('/manip-data')
-def manip_data():
-	# various functions to manipulate data
-	return render_template('do-something.html')
+@app.route('/scan-start')
+def scan_start():
+	#numfaces()
+	return render_template('scan-start.html')
 	
 @app.route('/view-faces')
-def view_detected():
+def view_faces():
 	return render_template('view-faces.html')
 	
 @app.route('/view-original')
