@@ -2,19 +2,19 @@
 
 {% block content %}
 	<form action="{{ url_for('camera_start') }}">
-		<input type="submit" value="start camera">
+		<input class="bigbutton" type="submit" value="start camera">
 	</form>
 	
 	<form action="{{ url_for('manip_data') }}">
-		<input type="submit" value="manipulate data">
+		<input class="bigbutton" type="submit" value="manipulate data">
 	</form>
 	
 	<form action="{{ url_for('view_detected') }}">
-		<input type="submit" value="view detected pictures">
+		<input class="bigbutton" type="submit" value="view detected pictures">
 	</form>
 	
 	<form action="{{ url_for('view_original') }}">
-		<input type="submit" value="view original pictures">
+		<input class="bigbutton" type="submit" value="view original pictures">
 	</form>
 
 {% endblock %}

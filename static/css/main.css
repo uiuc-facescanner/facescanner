@@ -1,0 +1,12 @@
+body {
+	color: #FF0000;
+}
+
+form {
+	padding: 1em;
+}
+
+.bigbutton {
+	width: 20em;
+	height: 2em;
+}
