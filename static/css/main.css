@@ -1,0 +1,17 @@
+body {
+    color: red;
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    color: green;
+    font-family: sans-serif;
+}
+
+h2 {
+    color: blue;
+}
+
+h3 {
+    color: yellow;
+}
