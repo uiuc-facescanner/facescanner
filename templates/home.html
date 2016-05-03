@@ -4,17 +4,21 @@
 	<form action="{{ url_for('camera_start') }}">
 		<input type="submit" value="start camera">
 	</form>
-	
+
 	<form action="{{ url_for('scan_start') }}">
 		<input type="submit" value="start scanning">
 	</form>
-	
+
 	<form action="{{ url_for('view_faces') }}">
 		<input type="submit" value="view faces">
 	</form>
-	
+
 	<form action="{{ url_for('view_original') }}">
 		<input type="submit" value="view original pictures">
+	</form>
+
+	<form action="{{ url_for('init_db') }}">
+		<input type="submit" value="new database">
 	</form>
 
 	<h1>Header 1</h1>

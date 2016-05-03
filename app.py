@@ -1,7 +1,7 @@
 #import camera
 #import face
 import glob
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, abort, render_template, flash, session, g
 import os
 from sqlite3 import dbapi2 as sqlite3
 
@@ -58,6 +58,7 @@ def connect_db():
     rv.row_factory = sqlite3.Row
     return rv
 
+@app.route('/init_db')
 def init_db():
     db = get_db()
     with app.open_resource('schema.sql', mode='r') as f:
