@@ -31,16 +31,18 @@ def camera_start():
 
 @app.route('/scan-start')
 def scan_start():
-	numfaces()
-	return render_template('scan-start.html')
+	count=face.numfaces()
+	return render_template('scan-start.html', count=count)
 
 @app.route('/view-faces')
 def view_faces():
-	return render_template('view-faces.html')
+	path = 'static/photos_scanned/*.jpg'
+	files=glob.glob(path)
+	return render_template('view-faces.html', files=files)
 
 @app.route('/view-original')
 def view_original():
-		path = 'static/images/*.jpg'
+		path = 'static/photos_orig/*.jpg'
 		files=glob.glob(path)
 		return render_template('view-pictures-original.html', files=files)
 

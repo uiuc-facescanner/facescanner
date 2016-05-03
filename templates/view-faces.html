@@ -2,7 +2,11 @@
 
 {% block content %}
 	<p>This is where you view the pictures that have had the facial recognition software run on them.</p>
-	
+
+	{% for file in files %}
+	<img src="{{ file }}" width='128' height='128'/>
+	{% endfor %}
+
 	<form><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
-	
+
 {% endblock %}

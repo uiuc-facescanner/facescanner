@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-	
+
 	<p>Scanning...</p>
-	
+
+	<p>Faces detected: {{count}}</p>
+
 	<form><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
-	
+
 {% endblock %}
