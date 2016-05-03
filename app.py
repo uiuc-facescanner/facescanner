@@ -38,7 +38,6 @@ def view_faces():
 def view_original():
         path = 'static/images/*.jpg'
         files=glob.glob(path)
-        print files
 	return render_template('view-pictures-original.html', files=files)
 
 if __name__ == '__main__':
