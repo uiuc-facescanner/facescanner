@@ -36,8 +36,9 @@ def camera_start():
 
 @app.route('/scan-start')
 def scan_start():
+	imagePath = 'static/photos_orig/*.jpg'
 	count=face.numfaces()
-	return render_template('scan-start.html', count=count)
+	return render_template('scan-start.html', imagePath=imagePath, count=count)
 
 @app.route('/view-faces')
 def view_faces():
