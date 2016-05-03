@@ -18,7 +18,7 @@ among other things.
 @app.route('/')
 def home():
 	return render_template('home.html')
-	
+
 @app.route('/camera-start')
 def camera_start():
 	# function to start camera
@@ -28,11 +28,11 @@ def camera_start():
 def scan_start():
 	#numfaces()
 	return render_template('scan-start.html')
-	
+
 @app.route('/view-faces')
 def view_faces():
 	return render_template('view-faces.html')
-	
+
 @app.route('/view-original')
 def view_original():
 	return render_template('view-pictures-original.html')
