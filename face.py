@@ -1,10 +1,11 @@
 import cv2
 import os
+import shutil
 
 # args: imgpath, output imgpath, cascPath
 #TODO scanned_originals
-def numfaces(imagePath):
-    #imagePath = "static/photos_orig/face1.jpg"
+def numfaces():
+    imagePath = "static/photos_orig/img3.jpg"
     #cascPath = sys.argv[2]
 
     faceCascade = cv2.CascadeClassifier('/usr/local/Cellar/opencv/2.4.12_2/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml')
@@ -31,4 +32,7 @@ def numfaces(imagePath):
 
     #save processed image
     cv2.imwrite("static/photos_scanned/result%s.jpg" % fileCount, image);
+
+    shutil.move("static/photos_orig/img3.jpg", "static/scanned_originals/")
+
     return count
