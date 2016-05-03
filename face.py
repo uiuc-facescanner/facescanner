@@ -1,9 +1,8 @@
 import cv2
 
-def numfaces():
-    imagePath = sys.argv[1]
-    cascPath = sys.argv[2]
-    count = 0;
+def numfaces(imagePath,cascPath):
+    
+    count = 0
 
     faceCascade = cv2.CascadeClassifier(cascPath)
 
@@ -18,6 +17,4 @@ def numfaces():
     for (x,y,w,h) in faces:
         cv2.rectangle(image,(x,y),(x+w,y+h), (0, 255, 0), 2)
         count = count + 1
-
     return count
-
