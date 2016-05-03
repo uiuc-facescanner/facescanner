@@ -1,9 +1,7 @@
-#import camera
-#import face
 import glob
 from flask import Flask, render_template, request, url_for
 
-from camera import camera_init, start_scanning
+# from camera import camera_init, start_scanning
 
 app = Flask(__name__)
 
@@ -24,7 +22,7 @@ def home():
 	
 @app.route('/camera-start')
 def camera_start():
-	start_scanning()
+	# start_scanning()
 	return render_template('camera-start.html')
 
 @app.route('/scan-start')
@@ -43,5 +41,5 @@ def view_original():
 	return render_template('view-pictures-original.html', files=files)
 
 if __name__ == '__main__':
-	camera_init()
+	# camera_init()
 	app.run(debug=True)
