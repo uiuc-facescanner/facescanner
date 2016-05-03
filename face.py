@@ -1,4 +1,5 @@
 import cv2
+import os
 
 # args: imgpath, output imgpath, cascPath
 def numfaces():
@@ -22,5 +23,11 @@ def numfaces():
         count = count + 1
     print "faces detected:",count
 
-    cv2.imwrite("static/photos_scanned/Result.jpg", image);
+    #if file exists, append/increment number
+    fileCount = 1
+    while os.path.exists("static/photos_scanned/result%s.jpg" % fileCount):
+        fileCount += 1
+
+    #save processed image
+    cv2.imwrite("static/photos_scanned/result%s.jpg" % fileCount, image);
     return count
