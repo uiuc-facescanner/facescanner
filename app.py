@@ -1,9 +1,10 @@
 #import camera
 import face
+
 import glob
-from flask import Flask, render_template, request, url_for, abort, render_template, flash, session, g
 import os
 from sqlite3 import dbapi2 as sqlite3
+from flask import Flask, render_template, request, url_for, abort, render_template, flash, session, g
 
 # from camera import camera_init, start_scanning
 
@@ -46,6 +47,7 @@ def view_original():
 		files=glob.glob(path)
 		return render_template('view-pictures-original.html', files=files)
 
+'''
 # face database
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -87,6 +89,7 @@ def close_db(error):
 
 
 # end face database
+'''
 
 if __name__ == '__main__':
 	# camera_init()

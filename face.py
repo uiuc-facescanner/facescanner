@@ -2,7 +2,7 @@ import cv2
 
 # args: imgpath, output imgpath, cascPath
 def numfaces():
-    imagePath = "images_orig/face1.jpg"
+    imagePath = "static/photos_orig/face1.jpg"
     #cascPath = sys.argv[2]
     count = 0;
 
@@ -22,5 +22,5 @@ def numfaces():
         count = count + 1
     print "faces detected:",count
 
-    cv2.imwrite("images_scanned/Result.jpg", image);
+    cv2.imwrite("static/photos_scanned/Result.jpg", image);
     return count
