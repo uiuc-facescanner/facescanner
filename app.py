@@ -2,6 +2,8 @@
 #import face
 import glob
 from flask import Flask, render_template, request, url_for
+import os
+from sqlite3 import dbapi2 as sqlite3
 
 app = Flask(__name__)
 
@@ -19,7 +21,7 @@ among other things.
 @app.route('/')
 def home():
 	return render_template('home.html')
-	
+
 @app.route('/camera-start')
 def camera_start():
 	# function to start camera
@@ -29,16 +31,56 @@ def camera_start():
 def scan_start():
 	#numfaces()
 	return render_template('scan-start.html')
-	
+
 @app.route('/view-faces')
 def view_faces():
 	return render_template('view-faces.html')
-	
+
 @app.route('/view-original')
 def view_original():
         path = 'static/images/*.jpg'
         files=glob.glob(path)
 	return render_template('view-pictures-original.html', files=files)
+
+# face database
+# Load default config and override config from an environment variable
+app.config.update(dict(
+    DATABASE=os.path.join(app.root_path, 'face.db'),
+    DEBUG=True,
+    SECRET_KEY='development key',
+    USERNAME='admin',
+    PASSWORD='default'
+))
+app.config.from_envvar('RESTORAN_SETTINGS', silent=True)
+
+def connect_db():
+    rv = sqlite3.connect(app.config['DATABASE'])
+    rv.row_factory = sqlite3.Row
+    return rv
+
+def init_db():
+    db = get_db()
+    with app.open_resource('schema.sql', mode='r') as f:
+        db.cursor().executescript(f.read())
+    db.commit()
+
+@app.cli.command('initdb')
+def initdb_command():
+    init_db()
+    print('Initialized the database.')
+
+def get_db():
+    if not hasattr(g, 'sqlite_db'):
+        g.sqlite_db = connect_db()
+    return g.sqlite_db
+
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+
+
+# end face database
 
 if __name__ == '__main__':
 	app.run(debug=True)
