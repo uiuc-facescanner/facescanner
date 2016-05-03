@@ -1,5 +1,5 @@
 #import camera
-#import face
+import face
 import glob
 from flask import Flask, render_template, request, url_for, abort, render_template, flash, session, g
 import os
@@ -29,7 +29,7 @@ def camera_start():
 
 @app.route('/scan-start')
 def scan_start():
-	#numfaces()
+	numfaces()
 	return render_template('scan-start.html')
 
 @app.route('/view-faces')
