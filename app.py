@@ -5,6 +5,8 @@ from flask import Flask, render_template, request, url_for, abort, render_templa
 import os
 from sqlite3 import dbapi2 as sqlite3
 
+# from camera import camera_init, start_scanning
+
 app = Flask(__name__)
 
 """ TODO: Define and implement routes for
@@ -24,7 +26,7 @@ def home():
 
 @app.route('/camera-start')
 def camera_start():
-	# function to start camera
+	# start_scanning()
 	return render_template('camera-start.html')
 
 @app.route('/scan-start')
@@ -85,4 +87,5 @@ def close_db(error):
 # end face database
 
 if __name__ == '__main__':
+	# camera_init()
 	app.run(debug=True)
