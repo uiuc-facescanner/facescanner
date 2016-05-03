@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.page-section {
+	width: 100%;
+	height: auto;
+	padding: 35px 0;
+}
+
+.colord {
+	background: #F6464A;
+}
+
+.colord h3 {
+	color: #fff;
+}
+
+img, video, iframe, embed, object {
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
