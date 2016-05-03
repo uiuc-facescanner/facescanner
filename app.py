@@ -47,7 +47,7 @@ def view_original():
 		files=glob.glob(path)
 		return render_template('view-pictures-original.html', files=files)
 
-'''
+
 # face database
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -89,7 +89,7 @@ def close_db(error):
 
 
 # end face database
-'''
+
 
 if __name__ == '__main__':
 	# camera_init()
