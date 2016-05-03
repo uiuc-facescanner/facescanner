@@ -37,4 +37,4 @@ def start_scanning():
 
         # calculate the current time in milliseconds and use it as a filename when saving
         current_time_in_ms = int(round(time.time() * 1000))
-        camera.capture('images/' + current_time_in_ms)
+        camera.capture('static/photos_orig/' + current_time_in_ms + '.jpg')
