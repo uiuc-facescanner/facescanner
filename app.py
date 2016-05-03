@@ -25,6 +25,10 @@ among other things.
 def home():
 	return render_template('home.html')
 
+@app.route('/admin')
+def admin():
+	return render_template('admin.html')
+
 @app.route('/camera-start')
 def camera_start():
 	# start_scanning()
@@ -64,8 +68,8 @@ def connect_db():
 	rv.row_factory = sqlite3.Row
 	return rv
 
-@app.route('/init_db')
-def init_db():
+@app.route('/new_db')
+def new_db():
 	db = get_db()
 	with app.open_resource('schema.sql', mode='r') as f:
 		db.cursor().executescript(f.read())
