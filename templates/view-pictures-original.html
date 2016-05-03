@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<img src="{{ url_for('static', filename='images/face1.jpg') }}" style="width:128px;height:128px;">
-<img src="{{ url_for('static', filename='images/face2.jpg') }}" style="width:128px;height:128px;">
-<img src="{{ url_for('static', filename='images/face3.jpg') }}" style="width:128px;height:128px;">
-	
+
+<p>{{ stringf }}</p>
+
+{% for file in files %}
+<img src="{{ file }}" width='128' height='128'/>
+{% endfor %}
 
 <form><input type="button" value="Back" onClick="history.go(-1);return true;"></form>
 	

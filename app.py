@@ -1,5 +1,6 @@
 #import camera
 #import face
+import glob
 from flask import Flask, render_template, request, url_for
 
 app = Flask(__name__)
@@ -35,7 +36,10 @@ def view_faces():
 	
 @app.route('/view-original')
 def view_original():
-	return render_template('view-pictures-original.html')
+        path = 'static/images/*.jpg'
+        files=glob.glob(path)
+        print files
+	return render_template('view-pictures-original.html', files=files)
 
 if __name__ == '__main__':
 	app.run(debug=True)
